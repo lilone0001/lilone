@@ -60,7 +60,7 @@ if [[ $(netstat -tlnp | grep -E ':10035' | awk '{print $4}' | sed -e 's/.*://') 
   kill $(lsof -t -i :10035)
 fi
 
-systemctl start v2ray 2>/dev/null && systemctl restart nginx
+systemctl start xray 2>/dev/null && systemctl restart nginx
 sleep 3
 netstat -tlnp | grep -E '(:10035|:443|:80)'
 
